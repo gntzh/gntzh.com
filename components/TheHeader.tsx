@@ -7,7 +7,7 @@ const NavLink = (props: { href: string; children: any; [x: string]: any }) => {
   return (
     <Link href={props.href}>
       <a
-        className="ml-4 first:ml-0 opacity-60 hover:opacity-100 border-0"
+        className="ml-4 first:ml-0 opacity-60 hover:opacity-100 border-0 transition-all duration-200"
         {...rest}
       >
         {children}
@@ -20,7 +20,9 @@ export default function TheHeader() {
   return (
     <header className="flex justify-between p-6 dark:text-gray-300">
       <Link href="/">
-        <a className="border-b-2">Grant</a>
+        <a className="border-b-2 border-b-gray-900/50 hover:border-b-gray-900 dark:border-b-gray-200/50 dark:hover:border-b-gray-200 transition-all duration-200">
+          Grant
+        </a>
       </Link>
       <div className="flex items-center text-gray-700 dark:text-gray-200">
         <nav className="flex items-center">

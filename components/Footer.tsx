@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mx-auto mt-10 mb-6 opacity-50 flex">
+    <footer className="mx-auto mt-10 mb-6 opacity-50 flex prose">
       <span className="text-sm">
         <a
           target="_blank"
