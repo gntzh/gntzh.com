@@ -5,15 +5,17 @@ import { useEffect, useState } from 'react'
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   useEffect(() => setMounted(true), [])
 
   if (!mounted) return null
 
   return (
-    <button onClick={() => setTheme(theme == 'light' ? 'dark' : 'light')}>
-      {theme == 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+    <button
+      onClick={() => setTheme(resolvedTheme == 'light' ? 'dark' : 'light')}
+    >
+      {resolvedTheme == 'light' ? <LightModeIcon /> : <DarkModeIcon />}
     </button>
   )
 }

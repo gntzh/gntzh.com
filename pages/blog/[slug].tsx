@@ -30,9 +30,6 @@ const BlogPost: NextPage<{ page: PostResult; blocks: Blocks }> = ({
           <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
         ))}
       </article>
-      <div>
-        <pre>{JSON.stringify(blocks, undefined, 2)}</pre>
-      </div>
     </div>
   )
 }
