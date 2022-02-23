@@ -21,7 +21,11 @@ export default function TheHeader() {
   return (
     <header className="flex justify-between p-6 dark:text-gray-300">
       <Link href="/">
-        <a className="border-b-2 border-b-gray-900/50 hover:border-b-gray-900 dark:border-b-gray-200/50 dark:hover:border-b-gray-200 transition-all duration-200">
+        <a
+          className="text-black dark:text-white border-b-2 border-b-gray-900/50
+        hover:border-b-gray-900 dark:border-b-gray-200/50
+        dark:hover:border-b-gray-200 transition-all duration-200"
+        >
           Grant
         </a>
       </Link>

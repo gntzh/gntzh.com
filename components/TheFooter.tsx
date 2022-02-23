@@ -1,6 +1,6 @@
 export default function TheFooter() {
   return (
-    <footer className="mx-auto mt-10 mb-6 opacity-50 flex prose">
+    <footer className="mx-auto mt-10 mb-6 opacity-50 flex prose prose-stone">
       <span className="text-sm">
         <a
           target="_blank"
@@ -9,7 +9,7 @@ export default function TheFooter() {
         >
           CC BY-NC-SA 4.0
         </a>{' '}
-        2017-2022 © Grant Zhang
+        © 2022 Grant Zhang
       </span>
       <div className="flex-auto" />
     </footer>

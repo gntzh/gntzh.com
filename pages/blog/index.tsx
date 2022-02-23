@@ -11,12 +11,14 @@ const Blog: NextPage<{ posts: Posts }> = ({ posts }) => {
       <Head>
         <title>Grant Zhang - Blog</title>
       </Head>
-      <h1 className="font-bold text-xl mb-8">Blog</h1>
+      <h1 className="font-bold text-3xl mb-8 text-black dark:text-white">
+        Blog
+      </h1>
       {posts.map((post: any) => {
         return (
           <article key={post.id} className="mb-6 md:mb-8">
             <header className="flex justify-between  mb-2">
-              <h2 className="text-xl font-medium">
+              <h2 className="text-xl font-medium text-black dark:text-white">
                 <Link
                   href={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
                 >
@@ -25,9 +27,7 @@ const Blog: NextPage<{ posts: Posts }> = ({ posts }) => {
                   </a>
                 </Link>
               </h2>
-              <time className="text-gray-600 dark:text-gray-400">
-                {post.properties.date.date.start}
-              </time>
+              <time>{post.properties.date.date.start}</time>
             </header>
             <p className="my-0 text-gray-600 dark:text-gray-400">
               {post.properties.summary.rich_text?.[0]?.plain_text}

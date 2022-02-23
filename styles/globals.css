@@ -6,6 +6,6 @@
 @import './prism-theme.css';
 
 body {
-  @apply bg-white text-gray-900;
-  @apply dark:bg-slate-900 dark:text-slate-400;
+  @apply bg-white text-slate-500;
+  @apply dark:bg-slate-800 dark:text-slate-400;
 }
