@@ -1,7 +1,7 @@
 import { CodeBlock } from '@notion-stuff/v4-types'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 
-export default function NotionCode({
+export default function NotionBlockCode({
   block: { code: value },
 }: {
   block: CodeBlock

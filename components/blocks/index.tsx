@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import clsx from 'clsx'
 import { slugify } from '../../lib/slugify'
 import NotionBlockCode from './NotionBlockCode'
+import NotionBlockImage from './NotionBlockImage'
 import { renderRichTexts } from './utils'
 
 export default function renderNotionBlock(block: any) {
@@ -51,12 +52,14 @@ export default function renderNotionBlock(block: any) {
       )
     case 'code':
       return <NotionBlockCode block={block} />
+    case 'image':
+      return <NotionBlockImage block={block} />
     case 'quote':
       return <blockquote>{renderRichTexts(value.text)}</blockquote>
     case 'callout':
       return (
         <blockquote className="flex">
-          <div className="-ml-3">{value.icon.emoji}</div>
+          <div className="-ml-4">{value.icon.emoji}</div>
           <div>{renderRichTexts(value.text)}</div>
         </blockquote>
       )
