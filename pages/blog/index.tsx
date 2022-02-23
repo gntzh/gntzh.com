@@ -7,7 +7,7 @@ import { getPosts, Posts } from '../../lib/notion'
 // TODO Pagination
 const Blog: NextPage<{ posts: Posts }> = ({ posts }) => {
   return (
-    <div>
+    <div className="max-w-prose mx-auto">
       <Head>
         <title>Grant Zhang - Blog</title>
       </Head>

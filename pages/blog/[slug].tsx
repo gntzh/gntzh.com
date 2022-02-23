@@ -21,7 +21,7 @@ const BlogPost: NextPage<{ page: PostResult; blocks: Blocks }> = ({
       <Head>
         <title>{title} - Grant&apos;s Blog</title>
       </Head>
-      <article className="prose dark:prose-invert">
+      <article className="prose dark:prose-invert mx-auto">
         <h1>{title}</h1>
         <p>
           <time>{(page.properties.date as PropertyValueDate).date!.start}</time>

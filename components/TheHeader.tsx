@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
 import GitHubIcon from '~icons/ri/github-line.jsx'
+import FeedIcon from '~icons/ri/rss-line.jsx'
 
 const NavLink = (props: { href: string; children: any; [x: string]: any }) => {
   const { href, children, ...rest } = props
@@ -35,6 +36,9 @@ export default function TheHeader() {
             title="GitHub"
           >
             <GitHubIcon />
+          </NavLink>
+          <NavLink href="/feed" target="_blank" title="RSS">
+            <FeedIcon />
           </NavLink>
         </nav>
         <div className="ml-4 flex items-center opacity-70 hover:opacity-100">

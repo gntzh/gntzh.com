@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { ThemeProvider } from 'next-themes'
-import TheHeader from '../components/TheHeader'
-import Footer from '../components/Footer'
 import NProgress from 'nprogress'
+import TheHeader from '../components/TheHeader'
+import TheFooter from '../components/TheFooter'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -31,11 +31,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <div className="min-h-screen flex flex-col">
-        <TheHeader></TheHeader>
-        <main className="px-4 sm:px-7 flex flex-col flex-grow w-full max-w-3xl mx-auto">
+        <TheHeader />
+        <div className="px-4 sm:px-6 flex-grow">
           <Component {...pageProps} />
-        </main>
-        <Footer></Footer>
+        </div>
+        <TheFooter />
       </div>
     </ThemeProvider>
   )

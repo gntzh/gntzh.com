@@ -4,7 +4,7 @@ import MailIcon from '~icons/ri/mail-line.jsx'
 
 const Home: NextPage = () => {
   return (
-    <div className="prose dark:prose-invert">
+    <div className="prose dark:prose-invert mx-auto">
       <Head>
         <title>Grant Zhang</title>
         <meta name="description" content="Grant Zhang" />
