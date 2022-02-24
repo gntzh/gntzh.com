@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^1.1.2",
     "@notionhq/client": "^0.4.13",
     "clsx": "^1.1.1",
     "feed": "^4.2.2",

@@ -27,7 +27,7 @@ html:not(.dark) {
   --prism-json-property: #698c96;
 }
 
-html.dark {
+.dark {
   --prism-foreground: #d4cfbf;
   --prism-background: #1e1e1e;
   --prism-comment: #758575;

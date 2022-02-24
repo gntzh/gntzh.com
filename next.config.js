@@ -6,6 +6,7 @@ module.exports = {
       require('unplugin-icons/webpack')({
         compiler: 'jsx',
         jsx: 'react',
+        extension: 'jsx',
         autoInstall: true,
       })
     )

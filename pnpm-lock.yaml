@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@giscus/react': ^1.1.2
   '@iconify-json/ri': ^1.1.0
   '@notion-stuff/v4-types': ^5.1.0
   '@notionhq/client': ^0.4.13
@@ -28,6 +29,7 @@ specifiers:
   unplugin-icons: ^0.13.2
 
 dependencies:
+  '@giscus/react': 1.1.2_react-dom@17.0.2+react@17.0.2
   '@notionhq/client': 0.4.13
   clsx: 1.1.1
   feed: 4.2.2
@@ -379,6 +381,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@giscus/react/1.1.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-htSAAiTtoHTRE8GqSSkWmT+Iq7LJhtqSmr+HjEC1cXlNd1WeLVZXjnuiIj7+L8DOUnAdfh+1FClN304FVxIcsQ==}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
 
   /@humanwhocodes/config-array/0.9.3:
     resolution: {integrity: sha512-3xSMlXHh03hCcCmFc0rbKp3Ivt2PFEJnQUJDDMTJQ2wkECZWdq4GePs2ctc5H8zV+cHPaq8k2vU8mrQjA6iHdQ==}

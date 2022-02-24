@@ -1,6 +1,6 @@
 export default function TheFooter() {
   return (
-    <footer className="mx-auto mt-10 mb-6 opacity-50 flex prose prose-stone">
+    <footer className="mx-auto mt-10 mb-6 opacity-50 flex">
       <span className="text-sm">
         <a
           target="_blank"
