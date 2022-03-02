@@ -17,7 +17,7 @@ const Comments = () => {
       mapping="pathname"
       reactionsEnabled="1"
       inputPosition="top"
-      theme={resolvedTheme === 'light' ? 'light' : 'dark_protanopia'}
+      theme={resolvedTheme === 'light' ? 'light' : 'dark'}
     />
   )
 }

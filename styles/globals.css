@@ -9,3 +9,13 @@ body {
   @apply bg-white text-slate-500;
   @apply dark:bg-slate-800 dark:text-slate-400;
 }
+
+::-webkit-scrollbar {
+  @apply w-1.5 h-1.5 bg-transparent;
+}
+::-webkit-scrollbar-track {
+  @apply rounded bg-slate-100 dark:bg-slate-500/[0.16];
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-slate-200 hover:bg-slate-400 dark:bg-slate-500/30 dark:hover:bg-slate-500/70;
+}

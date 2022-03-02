@@ -19,11 +19,11 @@ const BlogPost: NextPage<{ page: PostResult; blocks: Blocks }> = ({
   const title = (page.properties.title as PropertyValueTitle).title[0]
     .plain_text
   return (
-    <div className="mx-auto max-w-prose">
+    <div className="mx-auto">
       <Head>
         <title>{title} - Grant&apos;s Blog</title>
       </Head>
-      <article className="prose dark:prose-invert">
+      <article className="prose mx-auto dark:prose-invert">
         <h1>{title}</h1>
         <p>
           <time>{(page.properties.date as PropertyValueDate).date!.start}</time>
@@ -32,13 +32,13 @@ const BlogPost: NextPage<{ page: PostResult; blocks: Blocks }> = ({
           <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
         ))}
       </article>
-      <div className="prose dark:prose-invert mt-12">
+      <div className="mx-auto prose dark:prose-invert mt-12">
         <Link href="/blog">
           <a className="font-mono">cd ..</a>
         </Link>
       </div>
       {/* add 2px border to fix width calculation errors caused by max-w-prose(65ch)*/}
-      <div className="mt-12 border-r-2 border-transparent">
+      <div className="mt-12 max-w-prose mx-auto p-r-2 border-transparent">
         <Comments />
       </div>
     </div>
