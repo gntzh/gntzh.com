@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Giscus } from '@giscus/react'
+import { config } from '../config'
 
 const Comments = () => {
   const { resolvedTheme } = useTheme()
@@ -10,10 +11,10 @@ const Comments = () => {
 
   return (
     <Giscus
-      repo="gntzh/giscus-discussions"
-      repoId="R_kgDOG5nimw"
-      category="Announcements"
-      categoryId="DIC_kwDOG5nim84CBUAy"
+      repo={config.giscus.repo as `${string}/${string}`}
+      repoId={config.giscus.repoId}
+      category={config.giscus.category}
+      categoryId={config.giscus.categoryId}
       mapping="pathname"
       reactionsEnabled="1"
       inputPosition="top"

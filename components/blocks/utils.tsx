@@ -63,3 +63,7 @@ export function renderRichTexts(texts: RichText[]) {
     <Fragment key={index}>{renderRichText(text as RichTextText)}</Fragment>
   ))
 }
+
+export function parseRichTexts(texts: RichText[]): string {
+  return texts.map((text) => text.plain_text).join('')
+}

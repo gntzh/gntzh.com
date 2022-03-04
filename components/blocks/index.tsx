@@ -1,31 +1,42 @@
 import { Fragment } from 'react'
 import clsx from 'clsx'
+import LinkIcon from '~icons/ri/links-line.jsx'
 import { slugify } from '../../lib/slugify'
 import NotionBlockCode from './NotionBlockCode'
 import NotionBlockImage from './NotionBlockImage'
-import { renderRichTexts } from './utils'
+import { parseRichTexts, renderRichTexts } from './utils'
 
 export default function renderNotionBlock(block: any) {
   const value = block[block.type]
+  let slug
   switch (block.type) {
     case 'paragraph':
       return <p>{renderRichTexts(value.text)}</p>
     case 'heading_1':
-      return (
-        <h1 id={slugify(value.text[0].plain_text)}>
-          {renderRichTexts(value.text)}
-        </h1>
-      )
     case 'heading_2':
+      slug = slugify(parseRichTexts(value.text))
       return (
-        <h2 id={slugify(value.text[0].plain_text)}>
+        <h2 id={slug} className="not-prose flex items-center group">
           {renderRichTexts(value.text)}
+          <a
+            href={`#${slug}`}
+            className="text-[0.875rem] ml-1 opacity-0 group-hover:opacity-40 hover:!opacity-80 transition-opacity"
+          >
+            <LinkIcon />
+          </a>
         </h2>
       )
     case 'heading_3':
+      slug = slugify(parseRichTexts(value.text))
       return (
-        <h3 id={slugify(value.text[0].plain_text)}>
+        <h3 id={slug} className="not-prose flex items-center group">
           {renderRichTexts(value.text)}
+          <a
+            href={`#${slug}`}
+            className="text-[0.75rem] align-baseline ml-1 opacity-0 group-hover:opacity-40 hover:!opacity-80 transition-opacity"
+          >
+            <LinkIcon />
+          </a>
         </h3>
       )
     // TODO numbered list

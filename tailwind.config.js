@@ -23,6 +23,9 @@ module.exports = {
             blockquote: {
               fontStyle: 'normal',
             },
+            'h2, h3': {
+              'scroll-margin-top': '1rem',
+            },
             'summary + div > *': {
               marginTop: '0',
             },
