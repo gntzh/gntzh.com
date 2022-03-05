@@ -25,7 +25,7 @@ const generateRSS = (posts: any) => {
       title: post.properties.title.title[0].text.content,
       id: post.id,
       link: `${DOMAIN}/blog/${post.properties.slug.rich_text[0].text.content}`,
-      description: post.properties.summary.rich_text[0].text.content,
+      description: post.properties.summary.rich_text?.[0]?.text.content,
       date: new Date(post.properties.date.date.start),
     })
   })

@@ -14,7 +14,10 @@ export default function NotionBlockCode({
       className={'language-' + value.language}
       useInlineStyles={false}
     >
-      {value.text[0].plain_text}
+      {
+        // @ts-ignore incompatible @notion-stuff/v4-types version of v1
+        value.rich_text[0].plain_text
+      }
     </SyntaxHighlighter>
   )
 }
