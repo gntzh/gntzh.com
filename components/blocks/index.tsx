@@ -11,13 +11,13 @@ export default function renderNotionBlock(block: any) {
   let slug
   switch (block.type) {
     case 'paragraph':
-      return <p>{renderRichTexts(value.text)}</p>
+      return <p>{renderRichTexts(value.rich_text)}</p>
     case 'heading_1':
     case 'heading_2':
-      slug = slugify(parseRichTexts(value.text))
+      slug = slugify(parseRichTexts(value.rich_text))
       return (
         <h2 id={slug} className="not-prose flex items-center group">
-          {renderRichTexts(value.text)}
+          {renderRichTexts(value.rich_text)}
           <a
             href={`#${slug}`}
             className="text-[0.875rem] ml-1 opacity-0 group-hover:opacity-40 hover:!opacity-80 transition-opacity"
@@ -27,10 +27,10 @@ export default function renderNotionBlock(block: any) {
         </h2>
       )
     case 'heading_3':
-      slug = slugify(parseRichTexts(value.text))
+      slug = slugify(parseRichTexts(value.rich_text))
       return (
         <h3 id={slug} className="not-prose flex items-center group">
-          {renderRichTexts(value.text)}
+          {renderRichTexts(value.rich_text)}
           <a
             href={`#${slug}`}
             className="text-[0.75rem] align-baseline ml-1 opacity-0 group-hover:opacity-40 hover:!opacity-80 transition-opacity"
@@ -44,7 +44,7 @@ export default function renderNotionBlock(block: any) {
     case 'numbered_list_item':
       return (
         <li className="list-disc list-inside my-1">
-          {renderRichTexts(value.text)}
+          {renderRichTexts(value.rich_text)}
         </li>
       )
     case 'to_do':
@@ -57,7 +57,7 @@ export default function renderNotionBlock(block: any) {
             className="mr-1"
           />
           <span className={clsx({ 'opacity-75': value.checked })}>
-            {renderRichTexts(value.text)}
+            {renderRichTexts(value.rich_text)}
           </span>
         </div>
       )
@@ -66,18 +66,18 @@ export default function renderNotionBlock(block: any) {
     case 'image':
       return <NotionBlockImage block={block} />
     case 'quote':
-      return <blockquote>{renderRichTexts(value.text)}</blockquote>
+      return <blockquote>{renderRichTexts(value.rich_text)}</blockquote>
     case 'callout':
       return (
         <blockquote className="flex">
           <div className="-ml-4">{value.icon.emoji}</div>
-          <div>{renderRichTexts(value.text)}</div>
+          <div>{renderRichTexts(value.rich_text)}</div>
         </blockquote>
       )
     case 'toggle':
       return (
         <details>
-          <summary>{renderRichTexts(value.text)}</summary>
+          <summary>{renderRichTexts(value.rich_text)}</summary>
           <div>
             {value.children.map((block: any) => (
               <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>

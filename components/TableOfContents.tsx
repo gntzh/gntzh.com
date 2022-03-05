@@ -76,14 +76,16 @@ export default function TableOfContents({ blocks }: { blocks: Blocks }) {
   let title
   blocks.forEach((block) => {
     if (block.type === 'heading_2') {
-      title = parseRichTexts(block.heading_2.text)
+      // @ts-ignore incompatible @notion-stuff/v4-types version of v1
+      title = parseRichTexts(block.heading_2.rich_text)
       headings.push({
         title,
         id: slugify(title),
         children: [],
       })
     } else if (block.type === 'heading_3' && headings.length > 0) {
-      title = parseRichTexts(block.heading_3.text)
+      // @ts-ignore incompatible @notion-stuff/v4-types version of v1
+      title = parseRichTexts(block.heading_3.rich_text)
       headings[headings.length - 1].children.push({
         title,
         id: slugify(title),
